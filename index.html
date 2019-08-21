@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <title></title>
+  <style media="screen">
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <h1> --- TO DO LIST --- </h1>
+
+  </header>
+
+  <div class="container">
+
+    <div class="dashboard">
+
+      <ul class="list">
+        <li class="list-item" id="home" onclick="return showContent(this)">HOME</li>
+        <li class="list-item" id="todo" onclick="return showContent(this)">TODO</li>
+        <li class="list-item" id="user" onclick="return showContent(this)">USER</li>
+        <li class="list-item" id="dept" onclick="return showContent(this)">DEPT</li>
+        <li class="list-item" id="logout" onclick="return showContent(this)">LOGOUT</li>
+      </ul>
+
+    </div>
+
+    <div class="body">
+
+      <div class="home nav" id="home-popup">
+        <h2>HOME</h2>
+      </div>
+
+      <div class="todo nav" id="todo-popup">
+        <article class="search">
+          <div class="autocomplete">
+            <input id="myInput" type="text" name="myTask" placeholder="Add Task" onkeyup="showSuggestions(this)" onkeypress="showSuggestions(this)">
+            <div id="suggestions-list">
+                <ul id="list">
+
+                </ul>
+              </div>
+            <input type="submit" id="addBtn" onclick="addItems()">
+          </div>
+        </article>
+      </div>
+
+      <div class="user nav" id="user-popup">
+        <h2>USER</h2>
+      </div>
+
+      <div class="dept nav" id="dept-popup">
+        <h2>DEPARTMENT</h2>
+      </div>
+      <div class="logout nav" id="logout-popup">
+        <h2><a href="#">LOGOUT</a></h2>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    CONTACT US
+  </footer>
+
+</body>
+
+<script src="script.js" charset="utf-8"></script>
+
+</html>
