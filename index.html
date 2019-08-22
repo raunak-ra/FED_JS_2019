@@ -2,84 +2,82 @@
 <html lang="en" dir="ltr">
 
 <head>
-
   <meta charset="utf-8">
-  <link rel="stylesheet" href="style.css" type="text/css">
-  <title></title>
-  <style media="screen">
-  </style>
+  <link rel="stylesheet" href="css/master.css" type="text/css">
+  <link rel="stylesheet" href="css/button.css" type="text/css">
+  <link rel="stylesheet" href="css/suggest.css" type="text/css">
+  <link rel="stylesheet" href="css/dashboard.css" type="text/css">
+  <link rel="stylesheet" href="css/displaylist.css" type="text/css">
 
+  <title></title>
 </head>
 
 <body>
 
   <header>
-
     <h1> --- TO DO LIST --- </h1>
-
   </header>
 
   <div class="container">
 
     <div class="dashboard">
-
-      <ul class="list">
-        <li class="list-item" id="home" onclick="return showContent(this)">HOME</li>
-        <li class="list-item" id="todo" onclick="return showContent(this)">TODO</li>
-        <li class="list-item" id="user" onclick="return showContent(this)">USER</li>
-        <li class="list-item" id="dept" onclick="return showContent(this)">DEPT</li>
-        <li class="list-item" id="logout" onclick="return showContent(this)">LOGOUT</li>
+      <ul class="list" id="nav">
+        <li class="list-item" name="popup" id="todo" onclick="return showContent(this)">TODO</li>
+        <li class="list-item" name="popup" id="user" onclick="return showContent(this)">USER</li>
+        <li class="list-item" name="popup" id="dept" onclick="return showContent(this)">DEPT</li>
+        <li class="list-item" name="popup" id="logout" onclick="return showContent(this)">LOGOUT</li>
       </ul>
-
     </div>
 
-    <div class="body">
+    <div class="nav">
 
-      <div class="home nav" id="home-popup">
-        <h2>HOME</h2>
+      <div id="todo-popup" class="popup">
+
+        <ul>
+
+          <li><input id="myInput" type="text" placeholder="Add Task" onkeyup="showSuggestions(this)"
+              onkeypress="showSuggestions(this)" /></li>
+          <li><button class="addbutton" style="vertical-align:middle" onclick="searchItems(this)"><span>Search </span></button></li>
+          <li><button class="addbutton" style="vertical-align:middle" onclick="addItem()"><span>Add </span></button>
+          </li>
+        </ul>
+          
       </div>
+      <div id="suggestions-list" onclick="showTab(this)">
+          <ul id="list">
+    
+          </ul>
+        </div>
+      <div class="displaytask">
+        <h2>TASK LISTS TO COMPLETE</h2>
+         <ul id="items"> 
 
-      <div class="todo nav" id="todo-popup">
-        <article class="search">
-          <div class="autocomplete">
-            <input id="myInput" type="text" name="myTask" placeholder="Add Task" onkeyup="showSuggestions(this)" onkeypress="showSuggestions(this)">
-            <div id="suggestions-list">
-                <ul id="list">
-
-                </ul>
-              </div>
-            <input type="submit" id="addBtn" onclick="addItems()">
-            <h3>TASK LISTS</h3>
-          </div>
-          <div class="itemName">
-            <ul id="task-list">
-
-            </ul>
-          </div>
-        </article>
+         </ul>
       </div>
-
-      <div class="user nav" id="user-popup">
+      <div id="user-popup" class="popup">
         <h2>USER</h2>
       </div>
 
-      <div class="dept nav" id="dept-popup">
-        <h2>DEPARTMENT</h2>
+      <div id="dept-popup" class="popup">
+        <h2>DEPT</h2>
       </div>
-      <div class="logout nav" id="logout-popup">
-        <h2><a href="#">LOGOUT</a></h2>
+
+      <div id="logout-popup" class="popup">
+        <h2>LOGOUT</h2>
       </div>
 
     </div>
 
   </div>
 
+
   <footer>
-    CONTACT US
+    Copyright @ Todo list...
   </footer>
-
 </body>
+<script src="js/script.js" charset="utf-8"></script>
 
-<script src="script.js" charset="utf-8"></script>
+<script src="js/list.js" charset="utf-8"></script>
 
 </html>
+
