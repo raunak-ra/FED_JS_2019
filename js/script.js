@@ -29,20 +29,22 @@ function addItem() {
     counter++;
   }
 }
-function deleteItem(ele) {
-  delete items[ele.name];
-  var element = document.getElementById(ele.name);
+function deleteItem(it) {
+  delete items[it.name];
+  var element = document.getElementById(it.name);
   element.parentNode.removeChild(element);
 }
-function editItem(ele) {
-  itemName=prompt("Enter new item name : ");
+function editItem(zzz) {
+    document.getElementById('modal').style.display="block";
   id=ele.name;
   if(itemName != "")
   {
     document.getElementById(id).innerHTML="";
     document.getElementById(id).innerHTML+=itemName + "<button class='eBtn' onclick='editItem(this)' name="+id+" >Edit</button> <button class='dBtn' onclick='deleteItem(this)' class='deleteBtn' name="+id+">Delete</button><hr></li>";
     items[id]=itemName;
+    deleteItem(zzz);
   }
+
 }
 function showTab(ele) {
   var elements = document.getElementsByClassName('tab');
@@ -95,6 +97,25 @@ function searchItems() {
   }
 }
   document.getElementById('itemName').value = "";
+}
+
+
+function updateItem() {
+  if (document.getElementById('updatetext').value != "") {
+
+    var itemName = document.getElementById('updatetext').value;
+    items.push(itemName);
+    document.getElementById('items').innerHTML += "<li id="+counter+">"  + itemName + "<button class='editBtn' onclick='editItem(this)' name="+counter+" >Edit</button> <button onclick='deleteItem(this)' class='deleteBtn' name="+counter+">Delete</button><hr></li>";
+    document.getElementById('updatetext').value = "";
+    counter++;
+  }
+}
+
+
+function updateDone(element){
+   
+  document.getElementById('modal').style.display= 'none';
+   updateItem();
 }
 
 

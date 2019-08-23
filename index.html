@@ -38,7 +38,7 @@
           <li><input id="myInput" type="text" placeholder="Add Task" onkeyup="showSuggestions(this)"
               onkeypress="showSuggestions(this)" /></li>
           <li><button class="addbutton" style="vertical-align:middle" onclick="searchItems(this)"><span>Search </span></button></li>
-          <li><button class="addbutton" style="vertical-align:middle" onclick="addItem()"><span>Add </span></button>
+          <li><button class="addbutton" style="vertical-align:middle" onclick="addItem(this)"><span>Add </span></button>
           </li>
         </ul>
           
@@ -48,12 +48,19 @@
     
           </ul>
         </div>
+
+        <div id="modal">
+       <input id = "updatetext" type="text">
+       <button class="updatebutton" onclick="updateDone(this)">Update</button>
+        </div>
+
       <div class="displaytask">
         <h2>TASK LISTS TO COMPLETE</h2>
          <ul id="items"> 
 
          </ul>
       </div>
+      
       <div id="user-popup" class="popup">
         <h2>USER</h2>
       </div>

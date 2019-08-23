@@ -116,3 +116,18 @@ input[type=text] {
 #suggestions-list li:hover{
  background-color:lightgray;
 }
+
+#modal{
+  
+  display: none;
+  position: absolute;
+  left: 40vw;
+  top: 30vh;
+  height: 20vh;
+  width: 30vw;
+  /* background-color: aquamarine; */
+  z-index: 1;
+
+}
+
+
