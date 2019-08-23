@@ -11,20 +11,22 @@ function showContent(element) {
   var elements = document.getElementsByClassName("popup");
   for (let elem of elements) {
     elem.style.display = "none";
+    document.getElementById("taskcop").style.display="none";
   }
+  if(element.id=="todo") document.getElementById("taskcop").style.display="block";
   document.getElementById(element.id + "-popup").style.display = "block";
 }
 
 //-----------------------------------------------------------------------------//
 
-counter = 0;
+counter = 4;
 var items = ["Code", "Study","Sleep","Repeat"];
 function addItem() {
   if (document.getElementById('myInput').value != "") {
 
     var itemName = document.getElementById('myInput').value;
     items.push(itemName);
-    document.getElementById('items').innerHTML += "<li id="+counter+">"  + itemName + "<button class='editBtn' onclick='editItem(this)' name="+counter+" >Edit</button> <button onclick='deleteItem(this)' class='deleteBtn' name="+counter+">Delete</button><hr></li>";
+    document.getElementById('items').innerHTML += "<li id="+counter+">"  +"<span style='margin-right:100px;'>"+itemName+"</span>" + "<button class='editBtn' onclick='editItem(this)' name="+counter+" >Edit</button> <button onclick='deleteItem(this)' class='deleteBtn' name="+counter+">Delete</button><hr></li>";
     document.getElementById('myInput').value = "";
     counter++;
   }
@@ -36,14 +38,12 @@ function deleteItem(it) {
 }
 function editItem(zzz) {
     document.getElementById('modal').style.display="block";
-  id=ele.name;
-  if(itemName != "")
-  {
-    document.getElementById(id).innerHTML="";
-    document.getElementById(id).innerHTML+=itemName + "<button class='eBtn' onclick='editItem(this)' name="+id+" >Edit</button> <button class='dBtn' onclick='deleteItem(this)' class='deleteBtn' name="+id+">Delete</button><hr></li>";
-    items[id]=itemName;
-    deleteItem(zzz);
-  }
+  id=zzz.name;
+  document.getElementById('updatetext').value=items[id];
+
+  
+   deleteItem(zzz);
+ 
 
 }
 function showTab(ele) {

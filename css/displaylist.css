@@ -1,5 +1,5 @@
 .displaytask{
-  padding-top: 50px;
+  padding-top: 10px;
   padding-left: 50px;
 
 }
@@ -12,7 +12,6 @@
   padding: 0;
 }
 
-/* Style the list items */
 .displaytask ul li {
   cursor: pointer;
   position: relative;
@@ -38,8 +37,7 @@
   background: #ddd;
 }
 
-/* When clicked on, add a background color and strike out text */
-.displaytask ul li.checked {
+/* .displaytask ul li.checked {
   background: #888;
   color: #fff;
   text-decoration: line-through;
@@ -57,32 +55,6 @@
   transform: rotate(45deg);
   height: 15px;
   width: 7px;
-}
+} */
 
-/* Style the close button */
-.eBtn {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
-}
 
-.eBtn:hover {
-  background-color: #f44336;
-  color: white;
-}
-
-/* Style the header */
-.header {
-  background-color: #f44336;
-  padding: 30px 40px;
-  color: white;
-  text-align: center;
-}
-
-/* Clear floats after the header */
-.header:after {
-  content: "";
-  display: table;
-  clear: both;
-}
