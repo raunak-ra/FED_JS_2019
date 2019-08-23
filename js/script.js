@@ -105,7 +105,7 @@ function updateItem() {
 
     var itemName = document.getElementById('updatetext').value;
     items.push(itemName);
-    document.getElementById('items').innerHTML += "<li id="+counter+">"  + itemName + "<button class='editBtn' onclick='editItem(this)' name="+counter+" >Edit</button> <button onclick='deleteItem(this)' class='deleteBtn' name="+counter+">Delete</button><hr></li>";
+    document.getElementById('items').innerHTML += "<li id="+counter+">"  +"<span style='margin-right:100px;'>"+itemName+"</span>" + "<button class='editBtn' onclick='editItem(this)' name="+counter+" >Edit</button> <button onclick='deleteItem(this)' class='deleteBtn' name="+counter+">Delete</button><hr></li>";
     document.getElementById('updatetext').value = "";
     counter++;
   }
