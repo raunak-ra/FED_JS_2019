@@ -1,0 +1,17 @@
+.dashboard {
+  width: 20%;
+  height: 800px;
+  background: #ccc;
+  float: right;
+}
+
+.list-item {
+  padding: 2px;
+  font-size: 23px;
+  color: white;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  opacity: 0.5;
+}
